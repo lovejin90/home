@@ -1,10 +1,16 @@
 import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HotdealList from "./hotdeal/HotdealList";
+
+import axios from 'axios';
 
 function App() {
   return (
-    <div>
-      <h1>Hello world!</h1>
-    </div>
+      <BrowserRouter>
+          <Routes>
+              <Route path="/list"  element={<HotdealList/>} />
+          </Routes>
+      </BrowserRouter>
   );
 }
 
