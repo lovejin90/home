@@ -1,2 +1,26 @@
 .App {
+
+}
+
+.hotdeal_wrap {
+    padding : 25px;
+    .card-deck {
+        .card {
+            width: 15rem;
+            float: left;
+            height: 13rem;
+            margin:5px;
+
+            .text-break-line-3 {
+                font-weight: 400;
+                white-space: normal;
+                overflow: hidden;
+                word-wrap: break-word;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                line-height: 150%;
+            }
+        }
+    }
 }
