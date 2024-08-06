@@ -4,6 +4,7 @@ import MenuComp from "../components/MenuComp";
 const HeaderScrollHook = () => {
     const ref = useRef(null);
     let nScrollY = 0;
+    let is_cls = "";
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
@@ -27,15 +28,22 @@ const HeaderScrollHook = () => {
             ref.current.classList.add('off');
         }
 
-        if ( window.scrollY === 0) {
-            ref.current.classList.remove('white');
-        } else if (window.scrollY > window.outerHeight / 3) {
-            ref.current.classList.add('white');
+        if (window.location.pathname === '/') {
+            if (window.scrollY === 0) {
+                ref.current.classList.remove('white');
+            } else if (window.scrollY > window.outerHeight / 3) {
+                ref.current.classList.add('white');
+            }
         }
         nScrollY =  window.scrollY;
     };
+
+    if (window.location.pathname !== '/'){
+        is_cls = " white";
+    }
+
     return (
-        <header className={"header"} ref={ref}>
+        <header className={"header" + is_cls} ref={ref} >
             <div className={"header-wrap"}>
                 <span className={"header-logo"}/>
                 <MenuComp/>

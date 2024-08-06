@@ -11,7 +11,7 @@ html, body {
 $black-color : #000;
 $white-color : #fff;
 $bg-transparent-dark : rgba(0, 0, 0, 0.5) !important;
-$max-width : 1440px;
+$max-width : 1200px;
 $header-height : 85px;
 a {
   color : $black-color;
@@ -249,4 +249,53 @@ ul {
       }
     }
   }
+}
+
+.sec-cate-wrap {
+  padding-top : $header-height;
+  padding-bottom: 10px;
+  .cate-list {
+    max-width: $max-width;
+    margin : 0 auto;
+
+    .cate-list-items {
+      div {
+        overflow: hidden;
+        div {
+          overflow: hidden;
+          .item-box {
+            position: relative;
+            .item-txt {
+              position: absolute;
+              color:#ffffff;
+              left:0;
+              bottom:0;
+              padding: 0 5%;
+              display:none;
+            }
+            img {
+              width: 100%;
+            }
+
+            .item-box-dim {
+              background-color: $bg-transparent-dark;
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              display:none;
+            }
+            img:hover + .item-box-dim {
+              display:block;
+            }
+          }
+
+        }
+      }
+
+    }
+  }
+
+
 }
