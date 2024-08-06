@@ -15,17 +15,17 @@ export default function Main() {
             txt : 'Beauty & Fashion'
         },
         {
-            username : 2,
+            id : 2,
             background : bg2,
             txt : 'Beauty & Fashion'
         },
         {
-            username : 3,
+            id : 3,
             background : bg3,
             txt : 'Beauty & Fashion'
         },
         {
-            username : 4,
+            id : 4,
             background : bg4,
             txt : 'Beauty & Fashion'
         },
@@ -34,14 +34,14 @@ export default function Main() {
     return (
       <>
           <section className="sec-intro">
-            <div className="bg-trans-dark"></div>
-            <div className="intro-text-area">
+            <div className={"bg-trans-dark"}></div>
+            <div className={"intro-text-area"}>
                 <h1>TESTTEST</h1>
                 <hr/>
                 <p>Fusce imperdiet, arcu non tempor aliquam, justo tortor cursus est, sed facilisis eros purus et felis. Sed eros sapien, iaculis eget gravida euismod, dapibus vitae turpis. Pellentesque men egestas odio mi, vitae egestas massa elementum.</p>
             </div>
           </section>
-          <section className="sec-cate-list">
+          <section className={"sec-cate-list"}>
               {CateList.map(e => (<MainCateComp key={e.id} list={e}/>))}
           </section>
       </>

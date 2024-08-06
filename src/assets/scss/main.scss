@@ -1,11 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+html, body {
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  //font-weight: <weight>;
+  font-style: normal;
+}
+
+
 $black-color : #000;
 $white-color : #fff;
 $bg-transparent-dark : rgba(0, 0, 0, 0.5) !important;
 $max-width : 1440px;
+$header-height : 85px;
 a {
   color : $black-color;
   text-decoration: none;
   outline: none;
+
 }
 
 a:hover, a:active {
@@ -21,6 +33,7 @@ ul {
 }
 .header {
   width: 100%;
+  height: $header-height;
   position: fixed;
   z-index: 9999;
   .header-wrap {
@@ -30,10 +43,12 @@ ul {
     align-items: center;
     margin : 0 auto;
     max-width: $max-width;
-    img {
-      width: 82px;
+    .header-logo {
       float:left;
-      height: 50px;
+      background-image: url("../images/logo.png");
+      background-size : 82px 50px;
+      background-repeat: no-repeat;
+      padding: 25px 41px;
     }
 
     ul {
@@ -53,11 +68,51 @@ ul {
             margin-left: 5px;
             font-size: 12px;
             line-height: 0;
-
           }
         }
       }
     }
+  }
+}
+.header.white {
+  background-color: #fff;
+  .header-wrap {
+    .header-logo {
+      background-image: url("../images/logo-dark.png");
+    }
+    ul li a{
+      color : #000;
+    }
+  }
+}
+
+.header.on {
+  top : 0;
+  animation: header-slide-down ease-in-out 0.3s;
+}
+
+.header.off {
+  top : -$header-height;
+  animation: header-slide-up ease-in-out 0.3s;
+}
+
+@keyframes header-slide-up {
+  0% {
+    top : 0;
+  }
+
+  100% {
+    top : -$header-height;
+  }
+}
+
+@keyframes header-slide-down {
+  0% {
+    top : -$header-height;
+  }
+
+  100% {
+    top : 0;
   }
 }
 
@@ -111,12 +166,21 @@ ul {
 
 .sec-cate-list {
   .cate-list {
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding-top: 300px;
-    padding-bottom: 20px;
+    overflow: hidden;
     position: relative;
+    cursor : pointer;
+    .cate-list-bg {
+      padding-top: 300px;
+      padding-bottom: 20px;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      -webkit-transition: all 0.6s ease-in-out;
+      -moz-transition: all 0.6s ease-in-out;
+      -ms-transition: all 0.6s ease-in-out;
+      -o-transition: all 0.6s ease-in-out;
+      transition: all 0.6s ease-in-out;
+    }
     .cate-list-txt {
       height: auto;
       padding: 0 15% 3% 5%;
@@ -126,6 +190,10 @@ ul {
         font-weight: 800;
       }
     }
+  }
+  .cate-list-bg:hover {
+    background-position: 50% 50%;
+    background-size: 115%;
   }
 }
 .footer {
