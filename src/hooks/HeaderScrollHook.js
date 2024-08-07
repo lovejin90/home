@@ -1,5 +1,9 @@
 import React, {useState, useEffect, useRef} from 'react';
 import MenuComp from "../components/MenuComp";
+import {Mobile, PC} from "../index";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import MemuHook from "./MemuHook";
 
 const HeaderScrollHook = () => {
     const ref = useRef(null);
@@ -43,12 +47,19 @@ const HeaderScrollHook = () => {
     }
 
     return (
+
         <header className={"header" + is_cls} ref={ref} >
-            <div className={"header-wrap"}>
-                <span className={"header-logo"}/>
-                <MenuComp/>
-            </div>
+            <PC>
+                <div className={"header-wrap"}>
+                    <span className={"header-logo"}/>
+                    <MenuComp/>
+                </div>
+            </PC>
+            <Mobile>
+                <MemuHook/>
+            </Mobile>
         </header>
+
     );
 };
 
