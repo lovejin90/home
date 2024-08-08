@@ -47,7 +47,8 @@ export default function HotdealList() {
     const fetchHotdealList = () => {
         axios.get('/api')
             .then((response) => {
-                setHotdealList(response.data);
+                console.log(response)
+                setHotdealList(response);
             })
             .catch((error) => {
                 console.log("Error while fetching books:", error);
