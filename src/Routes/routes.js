@@ -86,15 +86,9 @@ const adminRoutes = [
   { path: "/admin", component: <Login /> },
   { path: "/login", component: <Login /> },
 
-];
-
-const publicRoutes = [
-  { path: "/", component: <Main /> },
-  { path: "/cate/:id", component: <CateList /> },
-  { path: "/list", component: <HotdealList /> },
-
   //dashboard
   { path: "/dashboard", component: <Dashboard /> },
+
 
   // Utility Pages
   { path: "/pages-starter", component: <StarterPage /> },
@@ -157,7 +151,6 @@ const publicRoutes = [
   // Maps Pages
   { path: "/maps-vector", component: <VectorMaps /> },
 
-
   // this route should be at the end of all other routes
   // eslint-disable-next-line react/display-name
   {
@@ -165,6 +158,13 @@ const publicRoutes = [
     exact: true,
     component: <Navigate to="/dashboard" />,
   },
+];
+
+const publicRoutes = [
+  { path: "/", component: <Main /> },
+  { path: "/cate/:id", component: <CateList /> },
+  { path: "/list", component: <HotdealList /> },
+  { path: "/*", component: <Error404 /> },
 ];
 
 export { adminRoutes, publicRoutes };
