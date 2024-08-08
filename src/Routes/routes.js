@@ -3,6 +3,8 @@ import Main from "../pages/Index";
 import CateList from "../pages/CateList";
 import HotdealList from "../hotdeal/HotdealList";
 import Login from "../pages/Authentication/Login";
+import MenuSetting from "../pages/Admin/MenuSetting";
+import Category from "../pages/Admin/CateList";
 
 import { Navigate } from "react-router-dom";
 //Dashboard
@@ -15,7 +17,6 @@ import Calender from "../pages/Calender";
 import Inbox from "../pages/E-mail/Inbox";
 import ReadEmail from "../pages/E-mail/ReadEmail";
 import EmailCompose from "../pages/E-mail/EmailCompose";
-
 
 // Import Utility Pages
 import StarterPage from "../pages/Utility/Starter-Page";
@@ -66,7 +67,6 @@ import BasicTable from "../pages/Tables/BasicTable.js";
 import ListJs from "../pages/Tables/ListTables/ListTables";
 import DataTable from "../pages/Tables/DataTables/DataTables";
 
-
 // Import Charts
 import ApexCharts from "../pages/Charts/ApexCharts";
 import ChartJs from "../pages/Charts/ChartjsCharts";
@@ -78,17 +78,18 @@ import JknobCharts from "../pages/Charts/JqueryKnobCharts";
 import IconMaterialdesign from "../pages/Icons/IconMaterialdesign";
 import IconFontawesome from "../pages/Icons/IconFontAwesome";
 import IconDripicons from "../pages/Icons/IconDrip";
-import IconBoxicons from "../pages/Icons/IconBoxicons"
+import IconBoxicons from "../pages/Icons/IconBoxicons";
 
 // Import Map Pages
 import VectorMaps from "../pages/Maps/VectorMap";
 const adminRoutes = [
   { path: "/admin", component: <Login /> },
   { path: "/login", component: <Login /> },
+  { path: "/menu-setting", component: <MenuSetting /> },
+  { path: "/category", component: <Category /> },
 
   //dashboard
   { path: "/dashboard", component: <Dashboard /> },
-
 
   // Utility Pages
   { path: "/pages-starter", component: <StarterPage /> },
