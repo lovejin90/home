@@ -1,5 +1,5 @@
 import React from "react";
-import "../assets/scss/main.scss"
+
 import MainCateComp from "../components/MainCateComp";
 import images from '../assets/images/cate_list/index';
 import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"

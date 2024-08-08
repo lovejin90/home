@@ -1,5 +1,5 @@
 import React from "react";
-import "../assets/scss/main.scss"
+
 import MainCateComp from "../components/MainCateComp";
 import bg1 from '../assets/images/main/gallery-list-1.jpg';
 import bg2 from '../assets/images/main/gallery-list-2.jpg';

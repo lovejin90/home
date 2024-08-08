@@ -1,6 +1,5 @@
 import React,{useState, useRef} from 'react';
 import MenuComp from "../components/MenuComp";
-import {Mobile, PC} from "../index";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";

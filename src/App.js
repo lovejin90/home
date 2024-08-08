@@ -1,7 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HotdealList from "./hotdeal/HotdealList";
-import Main from "./pages/Index";
-import CateList from "./pages/CateList";
+import Routes from "./Routes/index";
 import React from "react";
 import {useMediaQuery} from 'react-responsive';
 
@@ -22,13 +19,9 @@ export const PC = ({children}) => {
 }
 function App() {
   return (
-    <BrowserRouter>
-        <Routes>
-            <Route path="/" element={<Main/>}/>
-            <Route path="/cate/:id" element={<CateList/>}/>
-            <Route path="/list" element={<HotdealList/>}/>
-        </Routes>
-    </BrowserRouter>
+      <React.Fragment>
+          <Routes />
+      </React.Fragment>
   );
 }
 

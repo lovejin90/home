@@ -2,10 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import Header from "./layouts/Header";
-import Footer from "./layouts/Footer";
 import {useMediaQuery} from 'react-responsive';
+import { Provider } from "react-redux";
 
+import { BrowserRouter } from "react-router-dom";
+import {configureStore} from "./store/store";
 export const Mobile = ({children}) => {
     const isMobile = useMediaQuery({
         query : "(max-width:768px)"
@@ -23,10 +24,11 @@ export const PC = ({children}) => {
 }
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-      <Header />
-      <App />
-      <Footer />
-  </React.StrictMode>
-
+    <Provider store={configureStore({})}>
+        <React.Fragment>
+            <BrowserRouter>
+                <App />
+            </BrowserRouter>
+        </React.Fragment>
+    </Provider>
 );
