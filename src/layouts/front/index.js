@@ -1,26 +1,23 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback, useEffect } from "react";
 import PropTypes from "prop-types";
 import withRouter from "../../components/Common/withRouter";
-
+import "../../assets/scss/main.scss";
 // import Components
-import Header from './Header';
-import Footer from './Footer';
+import Header from "./Header";
+import Footer from "./Footer";
 
-
-const Layout = props => {
-
+const Layout = (props) => {
   return (
     <React.Fragment>
       <div id="layout-wrapper">
-        <Header/>
-        <div className="main-content">{props.children}</div>
+        <Header />
+        <div>{props.children}</div>
         <Footer />
       </div>
     </React.Fragment>
   );
 };
 
-Layout.propTypes = {
-};
+Layout.propTypes = {};
 
-export default  withRouter(Layout);
+export default withRouter(Layout);

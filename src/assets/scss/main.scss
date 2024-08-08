@@ -399,7 +399,7 @@ button{
 
 
 @include pc {
-  .footer {
+  .footer-wrap {
     background-color: $black-color;
     color : #fff;
     .footer-info-wrap {
@@ -455,7 +455,7 @@ button{
   }
 }
 @include mobile  {
-  .footer {
+  .footer-wrap {
     background-color: $black-color;
     color : #fff;
     .footer-info-wrap {
