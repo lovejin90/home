@@ -13,4 +13,16 @@ module.exports = function (app) {
         })
 
     );
+
+    app.use(
+        '/server',
+        createProxyMiddleware({
+            target: "http://ggoyo.com:8022/menu/getList",
+            changeOrigin: true,
+            pathRewrite: {
+                '^/menu/getList': '' // 하위 url 초기화
+            }
+        })
+
+    );
 };

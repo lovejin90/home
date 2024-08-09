@@ -1,13 +1,14 @@
 import React from "react";
-import {  Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 // redux
 
 // layouts
 import FrontLayout from "../layouts/front/index";
 import AdminLayout from "../layouts/admin/index";
+import NoHeaderLayout from "../layouts/NoHeader";
 
-import { adminRoutes, publicRoutes } from "./routes";
+import { adminRoutes, publicRoutes,NoHeaderRoutes } from "./routes";
 
 import { createSelector } from 'reselect';
 
@@ -40,6 +41,18 @@ const Index = () => {
                       <AdminLayout>
                           {route.component}
                       </AdminLayout>
+                  }
+                  key={idx}
+                  exact={true}
+              />
+          ))}
+          {NoHeaderRoutes.map((route, idx) => (
+              <Route
+                  path={route.path}
+                  element={
+                      <NoHeaderLayout>
+                          {route.component}
+                      </NoHeaderLayout>
                   }
                   key={idx}
                   exact={true}

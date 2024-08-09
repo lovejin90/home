@@ -83,8 +83,8 @@ import IconBoxicons from "../pages/Icons/IconBoxicons";
 // Import Map Pages
 import VectorMaps from "../pages/Maps/VectorMap";
 const adminRoutes = [
-  { path: "/admin", component: <Login /> },
-  { path: "/login", component: <Login /> },
+  { path: "/admin", component: <Dashboard /> },
+
   { path: "/menu-setting", component: <MenuSetting /> },
   { path: "/category", component: <Category /> },
 
@@ -164,8 +164,12 @@ const adminRoutes = [
 const publicRoutes = [
   { path: "/", component: <Main /> },
   { path: "/cate/:id", component: <CateList /> },
+
+];
+
+const NoHeaderRoutes = [
+  { path: "/login", component: <Login /> },
   { path: "/list", component: <HotdealList /> },
   { path: "/*", component: <Error404 /> },
 ];
-
-export { adminRoutes, publicRoutes };
+export { adminRoutes, publicRoutes, NoHeaderRoutes };

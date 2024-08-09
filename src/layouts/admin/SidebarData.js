@@ -1,17 +1,15 @@
 const SidebarData = [
   {
-    label: "프론트",
+    label: "카테고리영역",
     isMainMenu: true,
   },
   {
-    label: "메뉴",
+    label: "메인",
     icon: "far fa-hdd",
-    url: "/menu-setting",
-  },
-  {
-    label: "카테고리",
-    icon: "far fa-hdd",
-    url: "/category",
+    subItem: [
+      { sublabel: "메뉴", link: "/menu-setting" },
+      { sublabel: "카테고리", link: "/category" },
+    ],
   },
   {
     label: "Menu",
