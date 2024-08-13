@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from "react";
+import React from "react";
 import withRouter from "../components/Common/withRouter";
 
 const Layout = (props) => {

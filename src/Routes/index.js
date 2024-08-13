@@ -10,16 +10,8 @@ import NoHeaderLayout from "../layouts/NoHeader";
 
 import { adminRoutes, publicRoutes,NoHeaderRoutes } from "./routes";
 
-import { createSelector } from 'reselect';
-
 const Index = () => {
 
-  const routepage = createSelector(
-    (state ) => state.Layout,
-    (state) => ({
-        layoutType: state.layoutType,
-    })
-  );
   return (
       <Routes>
         {publicRoutes.map((route, idx) => (

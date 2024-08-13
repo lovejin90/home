@@ -1,5 +1,4 @@
 import React from "react";
-import {  Routes, Route } from "react-router-dom";
 
 import MainCateComp from "../components/MainCateComp";
 import bg1 from '../assets/images/main/gallery-list-1.jpg';

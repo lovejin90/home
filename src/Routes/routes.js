@@ -10,23 +10,13 @@ import { Navigate } from "react-router-dom";
 //Dashboard
 import Dashboard from "../pages/Dashboard";
 
-// Import Calender
-import Calender from "../pages/Calender";
-
-// Import E-mail
-import Inbox from "../pages/E-mail/Inbox";
-import ReadEmail from "../pages/E-mail/ReadEmail";
-import EmailCompose from "../pages/E-mail/EmailCompose";
-
 // Import Utility Pages
 import StarterPage from "../pages/Utility/Starter-Page";
-import Maintenance from "../pages/Utility/Maintenance-Page";
-import ComingSoon from "../pages/Utility/ComingSoon-Page";
 import TimeLine from "../pages/Utility/TimeLine-Page";
 import FAQs from "../pages/Utility/FAQs-Page";
 import Pricing from "../pages/Utility/Pricing-Page";
 import Error404 from "../pages/Utility/Error404-Page";
-import Error500 from "../pages/Utility/Error500-Page";
+//import Error500 from "../pages/Utility/Error500-Page";
 
 // Import UIElement Pages
 import UiAlerts from "../pages/UiElements/UiAlerts";

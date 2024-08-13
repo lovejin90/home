@@ -9,18 +9,16 @@ module.exports = function (app) {
             pathRewrite: {
                 '^/api': '' // 하위 url 초기화
             }
-
         })
-
     );
 
     app.use(
         '/server',
         createProxyMiddleware({
-            target: "http://ggoyo.com:8022/menu/getList",
+            target: "http://ggoyo.com:8022",
             changeOrigin: true,
             pathRewrite: {
-                '^/menu/getList': '' // 하위 url 초기화
+                '^/server': '' // 하위 url 초기화
             }
         })
 

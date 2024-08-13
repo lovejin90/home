@@ -1,6 +1,5 @@
 import React from "react";
-import { Card, CardBody, CardHeader, Col, Container, Row } from "reactstrap";
-import { Link } from "react-router-dom";
+import { Card, CardBody, CardHeader } from "reactstrap";
 import { ListTable } from "./Data";
 
 const MenuSetting = () => {
