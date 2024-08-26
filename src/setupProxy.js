@@ -6,9 +6,6 @@ module.exports = function (app) {
     createProxyMiddleware({
       target: "http://ggoyo.com:8022/",
       changeOrigin: true,
-      pathRewrite: {
-        "^/api": "", // 하위 url 초기화
-      },
     })
   );
 
@@ -17,9 +14,6 @@ module.exports = function (app) {
     createProxyMiddleware({
       target: "http://apis.data.go.kr/B552555/lhLeaseNoticeInfo1",
       changeOrigin: true,
-      pathRewrite: {
-        "^/lh_api": "", // 하위 url 초기화
-      },
     })
   );
 };
