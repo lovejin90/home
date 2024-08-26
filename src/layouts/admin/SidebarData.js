@@ -8,7 +8,8 @@ const SidebarData = [
     icon: "far fa-hdd",
     subItem: [
       { sublabel: "메뉴", link: "/menu-setting" },
-      { sublabel: "카테고리", link: "/category" },
+      { sublabel: "실험", link: "/category" },
+      { sublabel: "실험", link: "/lh" },
     ],
   },
   {

@@ -2,7 +2,7 @@ import React from "react";
 import { Card, CardBody, CardHeader } from "reactstrap";
 import { Data } from "./Data";
 
-const MenuSetting = () => {
+const Lh = () => {
   return (
     <React.Fragment>
       <div className="page-content"></div>
@@ -19,4 +19,4 @@ const MenuSetting = () => {
   );
 };
 
-export default MenuSetting;
+export default Lh;

@@ -4,6 +4,7 @@ import CateList from "../pages/CateList";
 import HotdealList from "../hotdeal/HotdealList";
 import Login from "../pages/Authentication/Login";
 import MenuSetting from "../pages/Admin/MenuSetting";
+import Lh from "../pages/Admin/Lh";
 import Category from "../pages/Admin/CateList";
 
 import { Navigate } from "react-router-dom";
@@ -77,6 +78,7 @@ const adminRoutes = [
 
   { path: "/menu-setting", component: <MenuSetting /> },
   { path: "/category", component: <Category /> },
+  { path: "/lh", component: <Lh /> },
 
   //dashboard
   { path: "/dashboard", component: <Dashboard /> },
