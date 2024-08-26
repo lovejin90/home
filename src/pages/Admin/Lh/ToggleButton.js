@@ -7,7 +7,7 @@ const ToggleButton = (prop) => {
   function setStatus(idx, yn) {
     if (idx && yn) {
       axios
-        .post("/sev/menu/updateStatus", {
+        .post("/api/menu/updateStatus", {
           id: idx,
           active_yn: yn,
         })

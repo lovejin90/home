@@ -4,21 +4,10 @@ module.exports = function (app) {
   app.use(
     "/api",
     createProxyMiddleware({
-      target: "http://ggoyo.com:8022/agents",
+      target: "http://ggoyo.com:8022/",
       changeOrigin: true,
       pathRewrite: {
         "^/api": "", // 하위 url 초기화
-      },
-    })
-  );
-
-  app.use(
-    "/sev",
-    createProxyMiddleware({
-      target: "http://ggoyo.com:8022/api",
-      changeOrigin: true,
-      pathRewrite: {
-        "^/sev": "", // 하위 url 초기화
       },
     })
   );

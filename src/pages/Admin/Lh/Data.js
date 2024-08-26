@@ -6,7 +6,7 @@ const Data = () => {
   const [List, setList] = useState([]);
   const fetchList = () => {
     axios
-      .get("/sev/menu/getList")
+      .get("/api/menu/getList")
       .then((response) => {
         setList(response);
       })
