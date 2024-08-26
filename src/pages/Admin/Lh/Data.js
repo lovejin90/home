@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import {ToggleButton} from "./ToggleButton";
+import { ToggleButton } from "./ToggleButton";
 
 const Data = () => {
   const [List, setList] = useState([]);
   const fetchList = () => {
     axios
-      .get("/server/menu/getList")
+      .get("/sev/menu/getList")
       .then((response) => {
         setList(response);
       })
@@ -51,7 +51,7 @@ const Data = () => {
   ];
 
   function setStatus() {
-    console.log('test1111');
+    console.log("test1111");
   }
 
   return (
@@ -62,7 +62,11 @@ const Data = () => {
             <tr>
               {Colums.map((crow, key) => {
                 return (
-                  <th key={key} className="{crow.cls}" data-sort="{crow.dataSoft}">
+                  <th
+                    key={key}
+                    className="{crow.cls}"
+                    data-sort="{crow.dataSoft}"
+                  >
                     {crow.name}
                   </th>
                 );
@@ -87,45 +91,44 @@ const Data = () => {
                   <td className="name">{row.name}</td>
                   <td className="url">{row.url}</td>
                   <td className="active-yn">
-
                     <div className="edit">
-                        <ToggleButton id={row.idx} active_yn={row.active_yn}/>
-                        </div>
-                        </td>
+                      <ToggleButton id={row.idx} active_yn={row.active_yn} />
+                    </div>
+                  </td>
 
-                        <td>
-                        <div className="d-flex gap-2">
-                        <div className="edit">
+                  <td>
+                    <div className="d-flex gap-2">
+                      <div className="edit">
                         <button
-                        className="btn btn-sm btn-success edit-item-btn"
-                        data-bs-toggle="modal"
-                        data-bs-target="#showModal"
+                          className="btn btn-sm btn-success edit-item-btn"
+                          data-bs-toggle="modal"
+                          data-bs-target="#showModal"
                         >
-                        Edit
+                          Edit
                         </button>
-                        </div>
-                        <div className="remove">
+                      </div>
+                      <div className="remove">
                         <button
-                        className="btn btn-sm btn-danger remove-item-btn"
-                        data-bs-toggle="modal"
-                        data-bs-target="#deleteRecordModal"
+                          className="btn btn-sm btn-danger remove-item-btn"
+                          data-bs-toggle="modal"
+                          data-bs-target="#deleteRecordModal"
                         >
-                        Remove
+                          Remove
                         </button>
-                        </div>
-                        </div>
-                        </td>
-                        </tr>
-                        );
-                      })}
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
-        <div className="noresult" style={{display: "none"}}>
+        <div className="noresult" style={{ display: "none" }}>
           <div className="text-center">
             <lord-icon
-                src="https://cdn.lordicon.com/msoeawqm.json"
-                trigger="loop"
-                colors="primary:#121331,secondary:#08a88a"
+              src="https://cdn.lordicon.com/msoeawqm.json"
+              trigger="loop"
+              colors="primary:#121331,secondary:#08a88a"
               style={{ width: "75px", height: "75px" }}
             ></lord-icon>
             <h5 className="mt-2">Sorry! No Result Found</h5>

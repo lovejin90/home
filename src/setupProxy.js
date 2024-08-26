@@ -13,12 +13,12 @@ module.exports = function (app) {
   );
 
   app.use(
-    "/server",
+    "/sev",
     createProxyMiddleware({
       target: "http://ggoyo.com:8022/api",
       changeOrigin: true,
       pathRewrite: {
-        "^/server": "", // 하위 url 초기화
+        "^/sev": "", // 하위 url 초기화
       },
     })
   );
