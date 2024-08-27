@@ -10,9 +10,9 @@ module.exports = function (app) {
   );
 
   app.use(
-    "/lh_api",
+    "/lh_api/",
     createProxyMiddleware({
-      target: "https://apis.data.go.kr/B552555/lhLeaseNoticeInfo1/lhLeaseNoticeInfo1?",
+      target: "https://apis.data.go.kr/B552555/lhLeaseNoticeInfo1",
       changeOrigin: true,
     })
   );

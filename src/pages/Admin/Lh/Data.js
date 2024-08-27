@@ -1,43 +1,60 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
-import {ToggleButton} from "./ToggleButton";
+import { ToggleButton } from "./ToggleButton";
 
 const Data = () => {
   const [List, setList] = useState([]);
 
-  var queryParams = '?&' + encodeURIComponent('serviceKey') + '=' + process.env.REACT_APP_LH_API_KEY ;
-  queryParams += '&' + encodeURIComponent('PG_SZ') + '=' + encodeURIComponent('10');
-  queryParams += '&' + encodeURIComponent('PAGE') + '=' + encodeURIComponent('1');
-  //queryParams += '&' + encodeURIComponent('PAN_NM') + '=' + encodeURIComponent('');
-  //queryParams += '&' + encodeURIComponent('UPP_AIS_TP_CD') + '=' + encodeURIComponent('01');
-  queryParams += '&' + encodeURIComponent('CNP_CD') + '=' + encodeURIComponent('11');
-  queryParams += '&' + encodeURIComponent('PAN_SS') + '=' + encodeURIComponent('공고중');
-  queryParams += '&' + encodeURIComponent('PAN_NT_ST_DT') + '=' + encodeURIComponent('2024.08.01');
-  queryParams += '&' + encodeURIComponent('CLSG_DT') + '=' + encodeURIComponent('2024.08.30');
-
-  console.log(queryParams);
-  const fetchList = () => {
+  const fetchList = (url) => {
     axios
-        .post("/lh_api", {
-          serviceKey : process.env.REACT_APP_LH_API_KEY
-          ,PG_SZ : '10'
-          ,PAGE : '1'
-          //,CNP_CD : '11'
-          ,PAN_SS : '공고중'
-          ,PAN_NT_ST_DT : '2024.08.01'
-          ,CLSG_DT : '2024.08.30'
-        })
-        .then((res) => {
-//        setList(response);
-          console.log(res);
-        })
-        .catch((error) => {
-          console.log("Error :", error);
-        });
+      .get("/lh_api/lhLeaseNoticeInfo1" + url)
+      .then((res) => {
+        setList([...List, res[1]]);
+      })
+      .catch((error) => {
+        console.log("Error :", error);
+      });
   };
 
   useEffect(() => {
-    fetchList();
+    let LHData = [
+      {
+        serviceKey: process.env.REACT_APP_LH_API_KEY,
+        PG_SZ: "100",
+        PAGE: "1",
+        //CNP_CD: "11",
+        UPP_AIS_TP_CD: "06",
+        PAN_SS: "공고중",
+        PAN_NT_ST_DT: "2024.08.01",
+        CLSG_DT: "2024.08.30",
+      },
+      {
+        serviceKey: process.env.REACT_APP_LH_API_KEY,
+        PG_SZ: "100",
+        PAGE: "1",
+        //CNP_CD: "11",
+        UPP_AIS_TP_CD: "06",
+        PAN_SS: "접수중",
+        PAN_NT_ST_DT: "2024.08.01",
+        CLSG_DT: "2024.08.30",
+      },
+    ];
+
+    let url = "";
+    LHData.map((list, idx) => {
+      url = "";
+      Object.entries(list).map((k, v) => {
+        if (v === 0) {
+          url += "?";
+          url += encodeURIComponent(k[0]) + "=" + k[1];
+        } else {
+          url += "&";
+          url += encodeURIComponent(k[0]) + "=" + encodeURIComponent(k[1]);
+        }
+      });
+      fetchList(url);
+    });
   }, []);
   List.map((list, key) => {
     return <h1>{list.name}</h1>;
@@ -50,110 +67,86 @@ const Data = () => {
       dataSoft: "no",
     },
     {
-      name: "타이틀",
+      name: "공고유형",
       cls: "col",
       dataSoft: "name",
     },
     {
-      name: "URL",
+      name: "공고세부유형",
       cls: "col",
       dataSoft: "url",
     },
     {
-      name: "노출여부",
+      name: "공고명",
       cls: "sort",
       dataSoft: "show",
     },
     {
-      name: "편집",
+      name: "지역명",
+      cls: "col",
+      dataSoft: "active",
+    },
+    {
+      name: "공고상태",
+      cls: "col",
+      dataSoft: "active",
+    },
+    {
+      name: "전체조회건수",
+      cls: "col",
+      dataSoft: "active",
+    },
+    {
+      name: "공고상세URL",
       cls: "col",
       dataSoft: "active",
     },
   ];
 
   return (
-      <React.Fragment>
-        <div className="table-responsive table-card mt-3 mb-1">
-          <table className="table align-middle table-nowrap" id="customerTable">
-            <thead className="table-light">
+    <React.Fragment>
+      <div className="table-responsive table-card mt-3 mb-1">
+        <table className="table align-middle table-nowrap" id="customerTable">
+          <thead className="table-light">
             <tr>
               {Colums.map((crow, key) => {
                 return (
-                    <th key={key} className="{crow.cls}" data-sort="{crow.dataSoft}">
-                      {crow.name}
-                    </th>
+                  <th
+                    key={key}
+                    className="{crow.cls}"
+                    data-sort="{crow.dataSoft}"
+                  >
+                    {crow.name}
+                  </th>
                 );
               })}
             </tr>
-            </thead>
-            <tbody className="list form-check-all">
-            {List.map((row, key) => {
-              return (
-                  <tr key={row.idx}>
-                    <th scope="row">
-                      <div className="form-check">
-                        <input
-                            className="form-check-input"
-                            type="checkbox"
-                            name="checkAll"
-                            value="option2"
-                        />
-                        {row.idx}
-                      </div>
-                    </th>
+          </thead>
+          <tbody className="list form-check-all">
+            {List.map((item, key) => {
+              item.dsList.map((row, i) => {
+                return (
+                  <tr key={row.RNUM}>
+                    <th scope="row">{row.RNUM}</th>
                     <td className="name">{row.name}</td>
-                    <td className="url">{row.url}</td>
-                    <td className="active-yn">
-
-                      <div className="edit">
-                        <ToggleButton id={row.idx} active_yn={row.active_yn}/>
-                      </div>
-                    </td>
-
-                    <td>
-                      <div className="d-flex gap-2">
-                        <div className="edit">
-                          <button
-                              className="btn btn-sm btn-success edit-item-btn"
-                              data-bs-toggle="modal"
-                              data-bs-target="#showModal"
-                          >
-                            Edit
-                          </button>
-                        </div>
-                        <div className="remove">
-                          <button
-                              className="btn btn-sm btn-danger remove-item-btn"
-                              data-bs-toggle="modal"
-                              data-bs-target="#deleteRecordModal"
-                          >
-                            Remove
-                          </button>
-                        </div>
-                      </div>
+                    <td className="name">{row.UPP_AIS_TP_NM}</td>
+                    <td className="name">{row.PAN_NM}</td>
+                    <td className="name">{row.CNP_CD_NM}</td>
+                    <td className="name">{row.PAN_SS}</td>
+                    <td className="name">{row.ALL_CNT}</td>
+                    <td className="name">
+                      <Link to={row.DTL_URL} target="_blank">
+                        바로가기
+                      </Link>
                     </td>
                   </tr>
-              );
+                );
+              });
             })}
-            </tbody>
-          </table>
-          <div className="noresult" style={{display: "none"}}>
-            <div className="text-center">
-              <lord-icon
-                  src="https://cdn.lordicon.com/msoeawqm.json"
-                  trigger="loop"
-                  colors="primary:#121331,secondary:#08a88a"
-                  style={{ width: "75px", height: "75px" }}
-              ></lord-icon>
-              <h5 className="mt-2">Sorry! No Result Found</h5>
-              <p className="text-muted mb-0">
-                We've searched more than 150+ Orders We did not find any orders
-                for you search.
-              </p>
-            </div>
-          </div>
-        </div>
-      </React.Fragment>
+          </tbody>
+        </table>
+      </div>
+    </React.Fragment>
   );
 };
 
