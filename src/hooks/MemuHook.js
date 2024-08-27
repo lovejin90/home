@@ -1,4 +1,4 @@
-import React,{useState, useRef} from 'react';
+import React,{useState} from 'react';
 import MenuComp from "../components/MenuComp";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from "@fortawesome/free-solid-svg-icons";
@@ -22,7 +22,7 @@ const MenuHook = () => {
         <>
             <div className={"header-wrap"}>
                 <span className={"header-logo"}/>
-                <button onClick={(modalIsOpen == 'off')?closeModalHandler:deleteHandler}><FontAwesomeIcon id={"header-menu-btn"} icon={icon} size="2x"/></button>
+                <button onClick={(modalIsOpen === 'off')?closeModalHandler:deleteHandler}><FontAwesomeIcon id={"header-menu-btn"} icon={icon} size="2x"/></button>
             </div>
             <div className={"header-site-info-menu-wrap " + (modalIsOpen)}>
                 <div className={"header-site-info-menu"}>

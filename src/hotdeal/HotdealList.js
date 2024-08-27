@@ -1,10 +1,7 @@
 import "../App.css";
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
-
-import { deleteBook } from "./api"; // delete 공통 함수 : api.js
 
 export default function HotdealList() {
   const [HotdealList, setHotdealList] = useState([]);
@@ -56,19 +53,6 @@ export default function HotdealList() {
       });
   };
 
-  const handleDeleteConfirm = (id) => {
-    if (window.confirm("정말로 삭제하시겠습니까?")) {
-      deleteBook(id) // delete 공통 함수 호출 : api.js
-        .then(() => {
-          console.log("Book deleted successfully.");
-          fetchHotdealList();
-        })
-        .catch((error) => {
-          console.log("Error while deleting book:", error);
-        });
-    }
-  };
-
   return (
     <div className="container hotdeal_wrap">
       <div className="card-deck">
@@ -87,6 +71,7 @@ export default function HotdealList() {
                   href={SiteInfo[returnIndex].domain + list.url}
                   className="btn btn-primary"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   바로가기
                 </a>

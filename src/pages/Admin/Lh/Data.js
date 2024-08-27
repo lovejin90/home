@@ -50,10 +50,6 @@ const Data = () => {
     },
   ];
 
-  function setStatus() {
-    console.log("test1111");
-  }
-
   return (
     <React.Fragment>
       <div className="table-responsive table-card mt-3 mb-1">

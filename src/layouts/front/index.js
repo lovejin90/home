@@ -1,5 +1,4 @@
-import React, { useCallback, useEffect } from "react";
-import PropTypes from "prop-types";
+import React from "react";
 import withRouter from "../../components/Common/withRouter";
 import "../../assets/scss/main.scss";
 // import Components

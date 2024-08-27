@@ -1,9 +1,6 @@
 import React from "react";
 
-import MainCateComp from "../components/MainCateComp";
-import images from '../assets/images/cate_list/index';
 import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
-import arrayShuffle from "array-shuffle";
 
 export default function CateList() {
     const CateList = [
@@ -76,7 +73,6 @@ export default function CateList() {
             txt : 'test test test test'
         },
     ];
-    let list = arrayShuffle(images);
 
     return (
         <>
@@ -89,7 +85,7 @@ export default function CateList() {
                         <Masonry columnsCount={3} gutter={"1rem"}>
                             {CateList.map(item => (
                             <div className={"item-box"}>
-                                <img src={"https://lh3.googleusercontent.com/d/"+item.img+"?authuser=0"}/>
+                                <img src={"https://lh3.googleusercontent.com/d/"+item.img+"?authuser=0"} alt="profile"/>
                                 <p className={"item-txt"}>{item.txt}</p>
                                 <div className={"item-box-dim"}></div>
                             </div>

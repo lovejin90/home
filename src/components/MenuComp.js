@@ -9,43 +9,43 @@ const MenuComp = (props) => {
             <PC>
                 <ul>
                     <li>
-                        <a href="">
+                        <a href="{()=>false}">
                             Home
                             <FontAwesomeIcon icon={faAngleDown} />
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="{()=>false}">
                             About
-                            <FontAwesomeIcon icon={faAngleDown} />
+                            <FontAwesomeIcon icon={faAngleDown}/>
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="{()=>false}">
                             Portfolio
-                            <FontAwesomeIcon icon={faAngleDown} />
+                            <FontAwesomeIcon icon={faAngleDown}/>
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="{()=>false}">
                             blog
-                            <FontAwesomeIcon icon={faAngleDown} />
+                            <FontAwesomeIcon icon={faAngleDown}/>
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="{()=>false}">
                             Contact
-                            <FontAwesomeIcon icon={faAngleDown} />
+                            <FontAwesomeIcon icon={faAngleDown}/>
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="{()=>false}">
                             More
-                            <FontAwesomeIcon icon={faAngleDown} />
+                            <FontAwesomeIcon icon={faAngleDown}/>
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="{()=>false}">
                             검색
                         </a>
                     </li>
@@ -54,37 +54,37 @@ const MenuComp = (props) => {
             <Mobile>
                 <ul>
                     <li>
-                        <a href="">
+                        <a href="{()=>false}">
                             Home
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="{()=>false}">
                             About
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="{()=>false}">
                             Portfolio
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="{()=>false}">
                             blog
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="{()=>false}">
                             Contact
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="{()=>false}">
                             More
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="{()=>false}">
                             검색
                         </a>
                     </li>

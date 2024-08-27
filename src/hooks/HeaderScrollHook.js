@@ -1,8 +1,6 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, { useEffect, useRef} from 'react';
 import MenuComp from "../components/MenuComp";
 import {Mobile, PC} from "../index";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from "@fortawesome/free-solid-svg-icons";
 import MemuHook from "./MemuHook";
 
 const HeaderScrollHook = () => {
@@ -15,7 +13,7 @@ const HeaderScrollHook = () => {
         return () => {
             window.removeEventListener('scroll', handleScroll); //clean up
         };
-    }, []);
+    });
 
     const handleScroll = () => {
         if (window.scrollY < window.outerHeight / 4) {

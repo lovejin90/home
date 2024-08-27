@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 const ToggleButton = (prop) => {
-  const [cls, setCls] = useState("btn btn-sm btn-danger");
-  const [txt, setTxt] = useState("미노출");
-  const [yn, setYn] = useState("N");
+  const [cls, setCls] = useState((prop.active_yn === "Y") ? "btn btn-sm btn-success" : "btn btn-sm btn-danger");
+  const [txt, setTxt] = useState((prop.active_yn === "Y") ? "노출" : "미노출");
+  const [yn, setYn] = useState((prop.active_yn === "Y") ? "N" : "Y");
   function setStatus(idx, yn) {
     if (idx && yn) {
       axios
@@ -12,7 +12,7 @@ const ToggleButton = (prop) => {
           active_yn: yn,
         })
         .then((res) => {
-          if (yn == "Y") {
+          if (yn === "Y") {
             setCls("btn btn-sm btn-success");
             setTxt("노출");
             setYn("N");
@@ -27,14 +27,6 @@ const ToggleButton = (prop) => {
         });
     }
   }
-  useEffect(() => {
-    if (prop.active_yn == "Y") {
-      setCls("btn btn-sm btn-success");
-      setTxt("노출");
-      setYn("N");
-    }
-  }, []);
-
   return (
     <React.Fragment>
       {
