@@ -114,14 +114,9 @@ const Lh = () => {
     }
     const Colums = [
         {
-            name: "No",
-            cls: "col",
-            dataSoft: "no",
-        },
-        {
-            name: "공고유형",
-            cls: "col",
-            dataSoft: "name",
+            name: "공고명",
+            cls: "sort",
+            dataSoft: "show",
         },
         {
             name: "공고세부유형",
@@ -129,27 +124,12 @@ const Lh = () => {
             dataSoft: "url",
         },
         {
-            name: "공고명",
-            cls: "sort",
-            dataSoft: "show",
-        },
-        {
-            name: "지역명",
-            cls: "col",
-            dataSoft: "active",
-        },
-        {
             name: "공고상태",
             cls: "col",
             dataSoft: "active",
         },
         {
-            name: "전체조회건수",
-            cls: "col",
-            dataSoft: "active",
-        },
-        {
-            name: "공고상세URL",
+            name: "지역명",
             cls: "col",
             dataSoft: "active",
         },
@@ -300,18 +280,14 @@ const Lh = () => {
                                                 data.map((row, i) => {
                                                     return (
                                                         <tr key={i}>
-                                                            <th scope="row">{row.RNUM}</th>
-                                                            <td className="name">{row.UPP_AIS_TP_NM}</td>
-                                                            <td className="name">{row.AIS_TP_CD_NM}</td>
-                                                            <td className="name">{row.PAN_NM}</td>
-                                                            <td className="name">{row.CNP_CD_NM}</td>
-                                                            <td className="name">{row.PAN_SS}</td>
-                                                            <td className="name">{row.ALL_CNT}</td>
                                                             <td className="name">
                                                                 <Link to={row.DTL_URL} target="_blank">
-                                                                    바로가기
+                                                                    {row.PAN_NM}
                                                                 </Link>
                                                             </td>
+                                                            <td className="name">{row.AIS_TP_CD_NM}</td>
+                                                            <td className="name">{row.PAN_SS}</td>
+                                                            <td className="name">{row.CNP_CD_NM}</td>
                                                         </tr>
                                                     )
                                                 })
