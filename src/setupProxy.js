@@ -16,4 +16,12 @@ module.exports = function (app) {
       changeOrigin: true,
     })
   );
+
+    app.use(
+        "/food_api",
+        createProxyMiddleware({
+            target: "https://openapi.foodsafetykorea.go.kr/api",
+            changeOrigin: true,
+        })
+    );
 };

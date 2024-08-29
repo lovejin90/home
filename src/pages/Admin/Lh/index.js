@@ -85,7 +85,6 @@ const Lh = () => {
         let copiedItems = [...LHData];
         copiedItems[0].PAN_NM = document.getElementById('PAN_NM').value;
         setLHData(copiedItems);
-        console.log(LHData);
     }
 
     const fetchList = (url,idx) => {

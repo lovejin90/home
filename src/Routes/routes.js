@@ -5,7 +5,7 @@ import HotdealList from "../hotdeal/HotdealList";
 import Login from "../pages/Authentication/Login";
 import MenuSetting from "../pages/Admin/MenuSetting";
 import Lh from "../pages/Admin/Lh";
-import Category from "../pages/Admin/CateList";
+import Food from "../pages/Admin/Food";
 
 import { Navigate } from "react-router-dom";
 //Dashboard
@@ -76,9 +76,9 @@ import VectorMaps from "../pages/Maps/VectorMap";
 const adminRoutes = [
   { path: "/admin", component: <Dashboard /> },
 
-  { path: "/menu-setting", component: <MenuSetting /> },
-  { path: "/category", component: <Category /> },
-  { path: "/lh", component: <Lh /> },
+  { path: "/admin/menu-setting", component: <MenuSetting /> },
+  { path: "/admin/food", component: <Food /> },
+  { path: "/admin/lh", component: <Lh /> },
 
   //dashboard
   { path: "/dashboard", component: <Dashboard /> },
