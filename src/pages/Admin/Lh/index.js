@@ -146,7 +146,7 @@ const Lh = () => {
             <Breadcrumbs title="메인" breadcrumbItem="LH공고" />
             <Row>
                 <Col>
-                    <Card>
+                    <Card> 
                         <CardBody>
                             <Row className="mb-3">
                                 <label
